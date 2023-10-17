@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlRootElement;
+@XmlRootElement()
 public class Libreria {
 	private ArrayList<Libro> listaLibro;
 	private String nombre;

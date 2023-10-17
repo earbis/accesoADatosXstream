@@ -1,3 +1,6 @@
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(propOrder = {"autor", "nombre", "editorial", "isbn"})
 public class Libro {
 	private String nombre;
 	private String autor;

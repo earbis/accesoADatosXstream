@@ -1,7 +1,8 @@
+import java.io.File;
 import java.util.ArrayList;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 
 public class Ejemplo_JAXB {
 private static final String MIARCHIVO_XML= "./libreria.xml";
@@ -16,5 +17,9 @@ public static void main(String[] args) throws JAXBException {
 	milibreria.setLugar("Talavera");
 	milibreria.setListaLibro(libroLista);
 	JAXBContext context = JAXBContext.newInstance(Libreria.class);
+	Marshaller m = context.createMarshaller();
+	m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+	m.marshal(milibreria	, System.out);
+	m.marshal(milibreria, new File(MIARCHIVO_XML));
 }
 }
